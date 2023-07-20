@@ -8,6 +8,7 @@
 
 #import "ISMaticooCustomInterstitial.h"
 #import <MaticooSDK/MATInterstitialAd.h>
+#import "MaticooMediationTrackManager.h"
 
 @interface ISMaticooCustomInterstitial()<MATInterstitialAdDelegate>
 @property (nonatomic, strong) MATInterstitialAd *interstitial;
@@ -23,6 +24,7 @@
         [delegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:1 errorMessage:@"zMaticoo Adapter Interstitial Error: placementId is nil"];
         return;
     }
+    [MaticooMediationTrackManager trackMediationAdRequest:placementId adType:INTERSTITIAL isAutoRefresh:NO];
     self.interstitial = [[MATInterstitialAd alloc] initWithPlacementID:placementId];
     self.interstitial.delegate = self;
     [self.interstitial loadAd];
@@ -46,22 +48,27 @@
         return;
     }
     [self.interstitial showAdFromViewController:viewController];
+    [MaticooMediationTrackManager trackMediationAdShow:self.interstitial.placementID adType:INTERSTITIAL];
 }
 
 - (void)interstitialAdDidLoad:(nonnull MATInterstitialAd *)interstitialAd {
     [self.iSDelegate adDidLoad];
+    [MaticooMediationTrackManager trackMediationAdRequestFilled:interstitialAd.placementID adType:INTERSTITIAL];
 }
 
 - (void)interstitialAd:(nonnull MATInterstitialAd *)interstitialAd didFailWithError:(nonnull NSError *)error {
     [self.iSDelegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:2 errorMessage:error.localizedDescription];
+    [MaticooMediationTrackManager trackMediationAdRequestFailed:interstitialAd.placementID adType:INTERSTITIAL];
 }
 
 - (void)interstitialAd:(nonnull MATInterstitialAd *)interstitialAd displayFailWithError:(nonnull NSError *)error {
     [self.iSDelegate adDidFailToShowWithErrorCode:1 errorMessage:error.localizedDescription];
+    [MaticooMediationTrackManager trackMediationAdImpFailed:interstitialAd.placementID adType:INTERSTITIAL];
 }
 
 - (void)interstitialAdDidClick:(nonnull MATInterstitialAd *)interstitialAd {
     [self.iSDelegate adDidClick];
+    [MaticooMediationTrackManager trackMediationAdClick:interstitialAd.placementID adType:INTERSTITIAL];
 }
 
 - (void)interstitialAdDidClose:(nonnull MATInterstitialAd *)interstitialAd {
@@ -75,6 +82,7 @@
 - (void)interstitialAdWillLogImpression:(nonnull MATInterstitialAd *)interstitialAd {
     [self.iSDelegate adDidOpen];
     [self.iSDelegate adDidShowSucceed];
+    [MaticooMediationTrackManager trackMediationAdImp:interstitialAd.placementID adType:INTERSTITIAL];
 }
 
 @end

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281A70ED2A6919E400C66952 /* MaticooMediationNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A70E72A6919E400C66952 /* MaticooMediationNetwork.m */; };
+		281A70EE2A6919E400C66952 /* MaticooMediationTrackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A70E82A6919E400C66952 /* MaticooMediationTrackManager.m */; };
+		281A70EF2A6919E400C66952 /* MaticooMediationURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A70EB2A6919E400C66952 /* MaticooMediationURLSession.m */; };
 		288896732A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 288896722A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m */; };
 		288896762A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 288896752A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m */; };
 		2888967C2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 2888967B2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m */; };
-		2888967F2A5F9EEC008FEDF4 /* ISMaticooCustomBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2888967E2A5F9EEC008FEDF4 /* ISMaticooCustomBanner.m */; };
 		47B0AD2A1CB5252100B8D125 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B0AD291CB5252100B8D125 /* WebKit.framework */; };
 		72849D401E2B7D2400CCCB4B /* IronSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72849D3F1E2B7D2400CCCB4B /* IronSource.framework */; };
 		72E0D6551E267513009ABC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E0D6451E267513009ABC1B /* AppDelegate.m */; };
@@ -38,14 +40,18 @@
 
 /* Begin PBXFileReference section */
 		126ED039A58CD8FF06C4EA94 /* Pods-IronSourceDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IronSourceDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-IronSourceDemoApp/Pods-IronSourceDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		281A70E72A6919E400C66952 /* MaticooMediationNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaticooMediationNetwork.m; path = ISMaticooCustomAdapter/MaticooMediationNetwork.m; sourceTree = SOURCE_ROOT; };
+		281A70E82A6919E400C66952 /* MaticooMediationTrackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaticooMediationTrackManager.m; path = ISMaticooCustomAdapter/MaticooMediationTrackManager.m; sourceTree = SOURCE_ROOT; };
+		281A70E92A6919E400C66952 /* MaticooMediationURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaticooMediationURLSession.h; path = ISMaticooCustomAdapter/MaticooMediationURLSession.h; sourceTree = SOURCE_ROOT; };
+		281A70EA2A6919E400C66952 /* MaticooMediationTrackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaticooMediationTrackManager.h; path = ISMaticooCustomAdapter/MaticooMediationTrackManager.h; sourceTree = SOURCE_ROOT; };
+		281A70EB2A6919E400C66952 /* MaticooMediationURLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaticooMediationURLSession.m; path = ISMaticooCustomAdapter/MaticooMediationURLSession.m; sourceTree = SOURCE_ROOT; };
+		281A70EC2A6919E400C66952 /* MaticooMediationNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaticooMediationNetwork.h; path = ISMaticooCustomAdapter/MaticooMediationNetwork.h; sourceTree = SOURCE_ROOT; };
 		288896712A5F9E79008FEDF4 /* ISMaticooCustomAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISMaticooCustomAdapter.h; path = ISMaticooCustomAdapter/ISMaticooCustomAdapter.h; sourceTree = SOURCE_ROOT; };
 		288896722A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ISMaticooCustomAdapter.m; path = ISMaticooCustomAdapter/ISMaticooCustomAdapter.m; sourceTree = SOURCE_ROOT; };
 		288896742A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISMaticooCustomRewardedVideo.h; path = ISMaticooCustomAdapter/ISMaticooCustomRewardedVideo.h; sourceTree = SOURCE_ROOT; };
 		288896752A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ISMaticooCustomRewardedVideo.m; path = ISMaticooCustomAdapter/ISMaticooCustomRewardedVideo.m; sourceTree = SOURCE_ROOT; };
 		2888967A2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISMaticooCustomInterstitial.h; path = ISMaticooCustomAdapter/ISMaticooCustomInterstitial.h; sourceTree = SOURCE_ROOT; };
 		2888967B2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ISMaticooCustomInterstitial.m; path = ISMaticooCustomAdapter/ISMaticooCustomInterstitial.m; sourceTree = SOURCE_ROOT; };
-		2888967D2A5F9EEC008FEDF4 /* ISMaticooCustomBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISMaticooCustomBanner.h; path = ISMaticooCustomAdapter/ISMaticooCustomBanner.h; sourceTree = SOURCE_ROOT; };
-		2888967E2A5F9EEC008FEDF4 /* ISMaticooCustomBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ISMaticooCustomBanner.m; path = ISMaticooCustomAdapter/ISMaticooCustomBanner.m; sourceTree = SOURCE_ROOT; };
 		47B0AD291CB5252100B8D125 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6DB5F29898D4A91261843296 /* libPods-IronSourceDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IronSourceDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72849D3F1E2B7D2400CCCB4B /* IronSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IronSource.framework; sourceTree = "<group>"; };
@@ -119,10 +125,14 @@
 				288896722A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m */,
 				2888967A2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.h */,
 				2888967B2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m */,
-				2888967D2A5F9EEC008FEDF4 /* ISMaticooCustomBanner.h */,
-				2888967E2A5F9EEC008FEDF4 /* ISMaticooCustomBanner.m */,
 				288896742A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.h */,
 				288896752A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m */,
+				281A70EC2A6919E400C66952 /* MaticooMediationNetwork.h */,
+				281A70E72A6919E400C66952 /* MaticooMediationNetwork.m */,
+				281A70EA2A6919E400C66952 /* MaticooMediationTrackManager.h */,
+				281A70E82A6919E400C66952 /* MaticooMediationTrackManager.m */,
+				281A70E92A6919E400C66952 /* MaticooMediationURLSession.h */,
+				281A70EB2A6919E400C66952 /* MaticooMediationURLSession.m */,
 			);
 			path = IronSourceDemoApp;
 			sourceTree = "<group>";
@@ -290,8 +300,10 @@
 				2888967C2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m in Sources */,
 				72E0D6601E2675C7009ABC1B /* main.m in Sources */,
 				288896762A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m in Sources */,
-				2888967F2A5F9EEC008FEDF4 /* ISMaticooCustomBanner.m in Sources */,
+				281A70ED2A6919E400C66952 /* MaticooMediationNetwork.m in Sources */,
+				281A70EE2A6919E400C66952 /* MaticooMediationTrackManager.m in Sources */,
 				72E0D6551E267513009ABC1B /* AppDelegate.m in Sources */,
+				281A70EF2A6919E400C66952 /* MaticooMediationURLSession.m in Sources */,
 				288896732A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

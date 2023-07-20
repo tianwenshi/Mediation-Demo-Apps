@@ -8,6 +8,7 @@
 
 #import "ISMaticooCustomAdapter.h"
 #import <MaticooSDK/MaticooAds.h>
+#import "MaticooMediationTrackManager.h"
 
 @implementation ISMaticooCustomAdapter
 
@@ -17,11 +18,11 @@
         [delegate onInitDidFailWithErrorCode:ISAdapterErrorMissingParams errorMessage:@"zMaticoo Adapter Error: app key is empty"];
     }
     [[MaticooAds shareSDK] initSDK:appKey onSuccess:^() {
-            NSLog(@"Init Success");
             [delegate onInitDidSucceed];
+            [MaticooMediationTrackManager trackMediationInitSuccess];
         } onError:^(NSError* error) {
-            NSLog(@"Init Failed %@", error.localizedDescription);
             [delegate onInitDidFailWithErrorCode:ISAdapterErrorMissingParams errorMessage:error.localizedDescription];
+            [MaticooMediationTrackManager trackMediationInitFailed:error];
     }];
  }
 
