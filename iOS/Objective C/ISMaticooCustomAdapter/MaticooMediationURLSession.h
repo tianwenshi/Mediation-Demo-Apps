@@ -14,14 +14,6 @@
 
 /**
  @param url
- @param isJson
- @param complete
- @return session
- */
-- (NSURLSessionDataTask*)GET:(NSURL *)url isRetJson:(BOOL)isJson completeHandler:(void(^)(id responseObj, NSError *error))complete;
-
-/**
- @param url
  @param complete
  @return session
  */
