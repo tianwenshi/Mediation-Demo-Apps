@@ -13,20 +13,16 @@
 +(instancetype)session;
 
 /**
- 封装NSURLSessionDataTask get方法
-
- @param url 请求链接
- @param isJson 是否需要Json解析
- @param complete 回调
+ @param url
+ @param isJson
+ @param complete
  @return session
  */
 - (NSURLSessionDataTask*)GET:(NSURL *)url isRetJson:(BOOL)isJson completeHandler:(void(^)(id responseObj, NSError *error))complete;
 
 /**
- 封装NSURLSessionDataTask post方法
-
- @param url 请求链接
- @param complete 回调
+ @param url
+ @param complete
  @return session
  */
 - (NSURLSessionDataTask*)POST:(NSMutableURLRequest *)url completeHandler:(void(^)(id responseObj, NSError *error))complete;
