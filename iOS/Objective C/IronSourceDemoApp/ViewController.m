@@ -11,7 +11,7 @@
 #define USERID @"demoapp"
 #define APPKEY @"1acad889d"
 
-@interface ViewController () <ISRewardedVideoDelegate ,ISInterstitialDelegate ,ISOfferwallDelegate ,ISBannerDelegate,ISImpressionDataDelegate>
+@interface ViewController () <ISInitializationDelegate, ISRewardedVideoDelegate ,ISInterstitialDelegate ,ISOfferwallDelegate ,ISBannerDelegate,ISImpressionDataDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *showRVButton;
 @property (weak, nonatomic) IBOutlet UIButton *showOWButton;
@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.loadISButton.enabled = NO;
     //The integrationHelper is used to validate the integration. Remove the integrationHelper before going live!
     [ISIntegrationHelper validateIntegration];
     
@@ -69,7 +69,7 @@
     // After setting the delegates you can go ahead and initialize the SDK.
     [IronSource setUserId:userId];
     
-    [IronSource initWithAppKey:APPKEY];
+    [IronSource initWithAppKey:APPKEY delegate:self];
     // To initialize specific ad units:
     // [IronSource initWithAppKey:APPKEY adUnits:@[IS_REWARDED_VIDEO, IS_INTERSTITIAL, IS_OFFERWALL, IS_BANNER]];
     
@@ -85,6 +85,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initializationDidComplete {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        self.loadISButton.enabled = YES;
+    });
 }
 
 #pragma mark -

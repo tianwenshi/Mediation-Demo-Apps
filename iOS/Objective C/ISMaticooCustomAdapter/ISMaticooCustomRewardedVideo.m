@@ -24,11 +24,11 @@
         [delegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:1 errorMessage:@"zMaticoo Adapter RV Error: placementId is nil"];
         return;
     }
+    self.iSDelegate = delegate;
     [MaticooMediationTrackManager trackMediationAdRequest:placementId adType:REWARDEDVIDEO isAutoRefresh:NO];
     self.rewardedVideo = [[MATRewardedVideoAd alloc] initWithPlacementID:placementId];
     self.rewardedVideo.delegate = self;
     [self.rewardedVideo loadAd];
-    self.iSDelegate = delegate;
 }
 
 - (BOOL)isAdAvailableWithAdData:(nonnull ISAdData *)adData {

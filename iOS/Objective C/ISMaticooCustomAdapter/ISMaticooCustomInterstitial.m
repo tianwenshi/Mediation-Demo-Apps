@@ -9,6 +9,7 @@
 #import "ISMaticooCustomInterstitial.h"
 #import <MaticooSDK/MATInterstitialAd.h>
 #import "MaticooMediationTrackManager.h"
+#import <MaticooSDK/MaticooAds.h>
 
 @interface ISMaticooCustomInterstitial()<MATInterstitialAdDelegate>
 @property (nonatomic, strong) MATInterstitialAd *interstitial;
@@ -24,11 +25,11 @@
         [delegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:1 errorMessage:@"zMaticoo Adapter Interstitial Error: placementId is nil"];
         return;
     }
+    self.iSDelegate = delegate;
     [MaticooMediationTrackManager trackMediationAdRequest:placementId adType:INTERSTITIAL isAutoRefresh:NO];
     self.interstitial = [[MATInterstitialAd alloc] initWithPlacementID:placementId];
     self.interstitial.delegate = self;
     [self.interstitial loadAd];
-    self.iSDelegate = delegate;
 }
 
 - (BOOL)isAdAvailableWithAdData:(nonnull ISAdData *)adData {
