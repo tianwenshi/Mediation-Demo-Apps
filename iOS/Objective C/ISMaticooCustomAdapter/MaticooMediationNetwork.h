@@ -15,16 +15,6 @@
  */
 + (instancetype)manager;
 
-/**
- Post请求
-
- @param path
- @param params
- @param complete
- @return
- */
-+ (id)POST:(NSString *)path parameters:(NSDictionary *)params postCiphertext:(BOOL)isCiphertext completeHandle:(void (^)(id responseObj, NSError* error))complete;
-
 + (id)POST:(NSString *)path parameters:(NSDictionary *)params completeHandle:(void (^)(id responseObj, NSError* error))complete;
 /**
  @param fileURL
