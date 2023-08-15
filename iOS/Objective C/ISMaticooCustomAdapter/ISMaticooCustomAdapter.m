@@ -28,7 +28,7 @@
  }
 
 - (NSString *) networkSDKVersion {
-   return @"1.2.2";
+   return [[MaticooAds shareSDK] getSDKVersion];
 }
 
 - (NSString *) adapterVersion {
