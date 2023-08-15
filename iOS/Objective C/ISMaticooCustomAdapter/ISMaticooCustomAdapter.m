@@ -17,6 +17,7 @@
     if (appKey == nil){
         [delegate onInitDidFailWithErrorCode:ISAdapterErrorMissingParams errorMessage:@"zMaticoo Adapter Error: app key is empty"];
     }
+    [[MaticooAds shareSDK] setMediationName:@"ironsource"];
     [[MaticooAds shareSDK] initSDK:appKey onSuccess:^() {
             [delegate onInitDidSucceed];
             [MaticooMediationTrackManager trackMediationInitSuccess];
