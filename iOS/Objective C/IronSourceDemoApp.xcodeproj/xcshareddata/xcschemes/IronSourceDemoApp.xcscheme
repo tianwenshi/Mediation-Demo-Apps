@@ -37,6 +37,17 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "28F00C962A9EE48300BF8D65"
+               BuildableName = "IronSourceDemoAppUITests.xctest"
+               BlueprintName = "IronSourceDemoAppUITests"
+               ReferencedContainer = "container:IronSourceDemoApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

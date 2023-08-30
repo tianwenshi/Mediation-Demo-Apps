@@ -9,9 +9,9 @@
 #import <IronSource/IronSource.h>
 
 #define USERID @"demoapp"
-#define APPKEY @"1acad889d"
+#define APPKEY @"1af2a6c2d"
 
-@interface ViewController () <ISInitializationDelegate, ISRewardedVideoDelegate ,ISInterstitialDelegate ,ISOfferwallDelegate ,ISBannerDelegate,ISImpressionDataDelegate>
+@interface ViewController () <ISInitializationDelegate, LevelPlayRewardedVideoDelegate ,ISInterstitialDelegate ,ISOfferwallDelegate ,ISBannerDelegate,ISImpressionDataDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *showRVButton;
 @property (weak, nonatomic) IBOutlet UIButton *showOWButton;
@@ -53,7 +53,8 @@
     // We're passing 'self' to our delegates because we want
     // to be able to enable/disable buttons to match ad availability.
     
-    [IronSource setRewardedVideoDelegate:self];
+//    [IronSource setRewardedVideoDelegate:self];
+    [IronSource setLevelPlayRewardedVideoDelegate:self];
     [IronSource setOfferwallDelegate:self];
     [IronSource setInterstitialDelegate:self];
     [IronSource setBannerDelegate:self];
@@ -152,6 +153,27 @@
 }
 #pragma mark - Rewarded Video Delegate Functions
 
+- (void)hasAvailableAdWithAdInfo:(ISAdInfo *)adInfo{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.showRVButton setEnabled:YES];
+    });
+}
+
+- (void)hasNoAvailableAd{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.showRVButton setEnabled:NO];
+    });
+}
+
+- (void)didOpenWithAdInfo:(ISAdInfo *)adInfo{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)didReceiveRewardForPlacement:(ISPlacementInfo *)placementInfo withAdInfo:(ISAdInfo *)adInfo{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
 // This method lets you know whether or not there is a video
 // ready to be presented. It is only after this method is invoked
 // with 'hasAvailableAds' set to 'YES' that you can should 'showRV'.
