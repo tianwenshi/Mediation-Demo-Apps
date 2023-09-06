@@ -30,6 +30,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    NSString *textToCopy = [[UIDevice currentDevice].identifierForVendor UUIDString];
+    pasteboard.string = textToCopy;
+    
     self.loadISButton.enabled = NO;
     //The integrationHelper is used to validate the integration. Remove the integrationHelper before going live!
     [ISIntegrationHelper validateIntegration];
