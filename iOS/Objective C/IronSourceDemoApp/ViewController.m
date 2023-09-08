@@ -9,7 +9,7 @@
 #import <IronSource/IronSource.h>
 
 #define USERID @"demoapp"
-#define APPKEY @"1af2a6c2d"
+#define APPKEY @"1acad889d"
 
 @interface ViewController () <ISInitializationDelegate, LevelPlayRewardedVideoDelegate ,ISInterstitialDelegate ,ISOfferwallDelegate ,ISBannerDelegate,ISImpressionDataDelegate>
 

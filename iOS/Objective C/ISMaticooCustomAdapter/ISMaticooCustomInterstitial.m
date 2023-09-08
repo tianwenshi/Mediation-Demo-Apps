@@ -58,13 +58,13 @@
 }
 
 - (void)interstitialAd:(nonnull MATInterstitialAd *)interstitialAd didFailWithError:(nonnull NSError *)error {
-    [self.iSDelegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:2 errorMessage:error.localizedDescription];
-    [MaticooMediationTrackManager trackMediationAdRequestFailed:interstitialAd.placementID adType:INTERSTITIAL];
+    [self.iSDelegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:2 errorMessage:error.description];
+    [MaticooMediationTrackManager trackMediationAdRequestFailed:interstitialAd.placementID adType:INTERSTITIAL msg:error.description];
 }
 
 - (void)interstitialAd:(nonnull MATInterstitialAd *)interstitialAd displayFailWithError:(nonnull NSError *)error {
-    [self.iSDelegate adDidFailToShowWithErrorCode:1 errorMessage:error.localizedDescription];
-    [MaticooMediationTrackManager trackMediationAdImpFailed:interstitialAd.placementID adType:INTERSTITIAL];
+    [self.iSDelegate adDidFailToShowWithErrorCode:1 errorMessage:error.description];
+    [MaticooMediationTrackManager trackMediationAdImpFailed:interstitialAd.placementID adType:INTERSTITIAL msg:error.description];
 }
 
 - (void)interstitialAdDidClick:(nonnull MATInterstitialAd *)interstitialAd {

@@ -22,7 +22,7 @@
             [delegate onInitDidSucceed];
             [MaticooMediationTrackManager trackMediationInitSuccess];
         } onError:^(NSError* error) {
-            [delegate onInitDidFailWithErrorCode:ISAdapterErrorMissingParams errorMessage:error.localizedDescription];
+            [delegate onInitDidFailWithErrorCode:ISAdapterErrorMissingParams errorMessage:error.description];
             [MaticooMediationTrackManager trackMediationInitFailed:error];
     }];
  }

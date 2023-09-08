@@ -59,84 +59,76 @@ static NSString *idfa = @"";
 }
 
 + (void)trackMediationInitSuccess{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:203],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"mediation":@"ironsource",@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
+    Class MATTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL trackSelector = NSSelectorFromString(@"trackMediationInitSuccess");
+    if ([MATTrackManagerClass respondsToSelector:trackSelector]) {
+        ((void (*)(Class, SEL))objc_msgSend)(MATTrackManagerClass, trackSelector);
+    }
 }
 
 + (void)trackMediationInitFailed:(NSError*)error{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:204],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS], @"mediation":@"ironsource", @"msg": error.description,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
+    Class MATTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL trackSelector = NSSelectorFromString(@"trackMediationInitFailed:");
+    if ([MATTrackManagerClass respondsToSelector:trackSelector]) {
+        ((void (*)(Class, SEL, NSString*))objc_msgSend)(MATTrackManagerClass, trackSelector, error.description);
+    }
 }
 
 + (void)trackMediationAdRequest:(NSString*)pid adType:(NSInteger)adtype isAutoRefresh:(BOOL)isAuto{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:201],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"ad_type": [NSNumber numberWithInteger:adtype], @"mediation":@"ironsource", @"pid":pid,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
+    Class MATTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL trackSelector = NSSelectorFromString(@"trackMediationAdRequest:adType:rid:isAutoRefresh:");
+    if ([MATTrackManagerClass respondsToSelector:trackSelector]) {
+        NSString *rid = @"";
+        ((void (*)(Class, SEL, NSString*, NSInteger, NSString*, NSInteger))objc_msgSend)(MATTrackManagerClass, trackSelector, pid, adtype, rid, isAuto);
+    }
 }
 
 + (void)trackMediationAdRequestFilled:(NSString*)pid adType:(NSInteger)adtype{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:205],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"ad_type": [NSNumber numberWithInteger:adtype], @"mediation":@"ironsource", @"pid":pid,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
+    Class matTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL selector = @selector(trackMediationAdRequestFilled:adType:);
+    if ([matTrackManagerClass respondsToSelector:selector]) {
+        ((void (*)(Class, SEL, NSString*, NSInteger))objc_msgSend)(matTrackManagerClass, selector, pid, adtype);
+    }
 }
 
-+ (void)trackMediationAdRequestFailed:(NSString*)pid adType:(NSInteger)adtype{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:206],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"ad_type": [NSNumber numberWithInteger:adtype], @"mediation":@"ironsource", @"pid":pid,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
++ (void)trackMediationAdRequestFailed:(NSString*)pid adType:(NSInteger)adtype msg:(NSString*)msg{
+    Class matTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL selector = @selector(trackMediationAdRequestFailed:adType:msg:);
+    if ([matTrackManagerClass respondsToSelector:selector]) {
+        ((void (*)(Class, SEL, NSString*, NSInteger, NSString*))objc_msgSend)(matTrackManagerClass, selector, pid, adtype, msg);
+    }
 }
 
 + (void)trackMediationAdShow:(NSString*)pid adType:(NSInteger)adtype{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:202],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"ad_type": [NSNumber numberWithInteger:adtype], @"mediation":@"ironsource", @"pid":pid,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
+    Class matTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL selector = @selector(trackMediationAdShow:adType:);
+    if ([matTrackManagerClass respondsToSelector:selector]) {
+        ((void (*)(Class, SEL, NSString*, NSInteger))objc_msgSend)(matTrackManagerClass, selector, pid, adtype);
+    }
 }
 
 + (void)trackMediationAdImp:(NSString*)pid adType:(NSInteger)adtype{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:207],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"ad_type": [NSNumber numberWithInteger:adtype], @"mediation":@"ironsource", @"pid":pid,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
+    Class matTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL selector = @selector(trackMediationAdImp:adType:);
+    if ([matTrackManagerClass respondsToSelector:selector]) {
+        ((void (*)(Class, SEL, NSString*, NSInteger))objc_msgSend)(matTrackManagerClass, selector, pid, adtype);
+    }
 }
 
-+ (void)trackMediationAdImpFailed:(NSString*)pid adType:(NSInteger)adtype{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:208],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"ad_type": [NSNumber numberWithInteger:adtype], @"mediation":@"ironsource", @"pid":pid,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
++ (void)trackMediationAdImpFailed:(NSString*)pid adType:(NSInteger)adtype msg:(NSString*)msg{
+    Class matTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL selector = @selector(trackMediationAdImpFailed:adType:msg:);
+    if ([matTrackManagerClass respondsToSelector:selector]) {
+        ((void (*)(Class, SEL, NSString*, NSInteger, NSString*))objc_msgSend)(matTrackManagerClass, selector, pid, adtype, msg);
+    }
 }
 
 + (void)trackMediationAdClick:(NSString*)pid adType:(NSInteger)adtype{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSMutableArray *jsonArray = [NSMutableArray array];
-    [jsonArray addObject:@{ @"eid": [NSNumber numberWithInt:209],@"ts": [NSNumber numberWithLongLong:TIMESTAMP_MS],@"ad_type": [NSNumber numberWithInteger:adtype], @"mediation":@"ironsource", @"pid":pid,@"did":[self getIDFA],@"bundle":[self getBundle],@"appv":[self getShortBundleVersion]}];
-    [dict setValue:jsonArray forKey:@"data"];
-    NSString *url = [self buildLogUrl];
-    [MaticooMediationNetwork POST:url parameters:dict completeHandle:^(id responseObj, NSError *error) {}];
+    Class matTrackManagerClass = NSClassFromString(@"MATTrackManager");
+    SEL selector = @selector(trackMediationAdClick:adType:);
+    if ([matTrackManagerClass respondsToSelector:selector]) {
+        ((void (*)(Class, SEL, NSString*, NSInteger))objc_msgSend)(matTrackManagerClass, selector, pid, adtype);
+    }
 }
 
 @end

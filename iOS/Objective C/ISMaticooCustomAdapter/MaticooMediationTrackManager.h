@@ -21,9 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)trackMediationInitFailed:(NSError*)error;
 + (void)trackMediationAdRequest:(NSString*)pid adType:(NSInteger)adtype isAutoRefresh:(BOOL)isAuto;
 + (void)trackMediationAdRequestFilled:(NSString*)pid adType:(NSInteger)adtype;
-+ (void)trackMediationAdRequestFailed:(NSString*)pid adType:(NSInteger)adtype;
++ (void)trackMediationAdRequestFailed:(NSString*)pid adType:(NSInteger)adtype msg:(NSString*)msg;
 + (void)trackMediationAdImp:(NSString*)pid adType:(NSInteger)adtype;
-+ (void)trackMediationAdImpFailed:(NSString*)pid adType:(NSInteger)adtype;
++ (void)trackMediationAdImpFailed:(NSString*)pid adType:(NSInteger)adtype msg:(NSString*)msg;
 + (void)trackMediationAdClick:(NSString*)pid adType:(NSInteger)adtype;
 + (void)trackMediationAdShow:(NSString*)pid adType:(NSInteger)adtype;
 @end

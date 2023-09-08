@@ -57,13 +57,13 @@
 }
 
 - (void)rewardedVideoAd:(nonnull MATRewardedVideoAd *)rewardedVideoAd didFailWithError:(nonnull NSError *)error {
-    [self.iSDelegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:2 errorMessage:error.localizedDescription];
-    [MaticooMediationTrackManager trackMediationAdRequestFailed:rewardedVideoAd.placementID adType:REWARDEDVIDEO];
+    [self.iSDelegate adDidFailToLoadWithErrorType:ISAdapterErrorTypeInternal errorCode:2 errorMessage:error.description];
+    [MaticooMediationTrackManager trackMediationAdRequestFailed:rewardedVideoAd.placementID adType:REWARDEDVIDEO msg:error.description];
 }
 
 - (void)rewardedVideoAd:(nonnull MATRewardedVideoAd *)rewardedVideoAd displayFailWithError:(nonnull NSError *)error {
-    [self.iSDelegate adDidFailToShowWithErrorCode:1 errorMessage:error.localizedDescription];
-    [MaticooMediationTrackManager trackMediationAdImpFailed:rewardedVideoAd.placementID adType:REWARDEDVIDEO];
+    [self.iSDelegate adDidFailToShowWithErrorCode:1 errorMessage:error.description];
+    [MaticooMediationTrackManager trackMediationAdImpFailed:rewardedVideoAd.placementID adType:REWARDEDVIDEO msg:error.description];
 }
 
 - (void)rewardedVideoAdCompleted:(nonnull MATRewardedVideoAd *)rewardedVideoAd {
