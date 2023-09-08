@@ -18,46 +18,6 @@ static NSString *idfa = @"";
 
 @implementation MaticooMediationTrackManager
 
-+(NSString *) buildLogUrl{
-    Class requestClass = NSClassFromString(@"MATRequestParameters");
-    if(requestClass && [logURL isEqualToString:@""]){
-        logURL = ((NSString* (*)(id, SEL))objc_msgSend)((id)requestClass, @selector(buildLogUrl));
-    }
-    return logURL;
-}
-
-+(NSString*) getIDFA{
-    if (@available(iOS 14, *)) {
-        // iOS14及以上版本需要先请求权限
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            // 获取到权限后，依然使用老方法获取idfa
-            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
-                idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-            }
-        }];
-    } else {
-        // iOS14以下版本依然使用老方法
-        // 判断在设置-隐私里用户是否打开了广告跟踪
-        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-            idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-        }
-    }
-    return idfa;
-}
-
-+(NSString*) getBundle{
-    NSString *bundle = NSBundle.mainBundle.bundleIdentifier;
-    if (bundle != nil)
-        return bundle;
-    return @"";
-}
-
-+(NSString*) getShortBundleVersion{
-    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *shortVersion = [infoDict objectForKey:@"CFBundleShortVersionString"];
-    return shortVersion;
-}
-
 + (void)trackMediationInitSuccess{
     Class MATTrackManagerClass = NSClassFromString(@"MATTrackManager");
     SEL trackSelector = NSSelectorFromString(@"trackMediationInitSuccess");
