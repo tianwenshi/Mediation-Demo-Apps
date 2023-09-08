@@ -9,12 +9,6 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "MaticooMediationNetwork.h"
-#import <AppTrackingTransparency/AppTrackingTransparency.h>
-#import <AdSupport/ASIdentifierManager.h>
-
-#define TIMESTAMP_MS [[NSDate date] timeIntervalSince1970] * 1000
-static NSString *logURL = @"";
-static NSString *idfa = @"";
 
 @implementation MaticooMediationTrackManager
 
