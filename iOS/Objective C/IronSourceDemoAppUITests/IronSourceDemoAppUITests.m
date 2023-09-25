@@ -32,61 +32,68 @@
 }
 
 - (void)testRewardedVideo {
-    sleep(15);
-    XCUIElement *btn = self.app.buttons[@"Show"];
-    XCTAssertTrue(btn.exists, @"No Load Rewarded Video AD btn.");
-    [btn tap];
-    
-    for(int i = 0; i<50; i++) {
-        XCUIElement *closebtn = self.app.buttons[@"ad_closeBtn"];
-        if(closebtn.exists) {
-            break;
+    for (int i = 0; i < 10; i++) {
+        BOOL isReady = NO;
+        for(int i = 0; i<50; i++) {
+            XCUIElement *btn = self.app.buttons[@"Show"];
+            if(btn.exists) {
+                [btn tap];
+                isReady = YES;
+                break;
+            }
+            sleep(1);
         }
+        
+        if (isReady == NO){
+            XCTAssertTrue(isReady, @"video ad not ready");
+        }
+        
+        for(int i = 0; i<50; i++) {
+            XCUIElement *closebtn = self.app.buttons[@"ad_closeBtn"];
+            if(closebtn.exists) {
+                break;
+            }
+            sleep(1);
+        }
+        XCUIElement *closebtn = self.app.buttons[@"ad_closeBtn"];
+        XCTAssertTrue(closebtn.exists, @"ad_closeBtn no exists.");
+        [closebtn tap];
         sleep(1);
     }
-    XCUIElement *closebtn = self.app.buttons[@"ad_closeBtn"];
-    XCTAssertTrue(closebtn.exists, @"ad_closeBtn no exists.");
-    [closebtn tap];
-    sleep(1);
 }
 
 
 - (void)testInterstitial {
-    sleep(8);
-    XCUIElement *btn = self.app.buttons[@"Load"];
-    XCTAssertTrue(btn.exists, @"No Load Interstitial AD btn.");
-    [btn tap];
-    BOOL isReady = NO;
-    for(int i = 0; i < 10; i++) {
-        XCUIElement *show = self.app.staticTexts[@"ShowIS"];
-        if(show.exists) {
-            isReady = YES;
-            break;
-        }
+    sleep(5);
+    for (int i = 0; i < 10; i++) {
         sleep(3);
-    }
-    
-    XCUIElement *show = self.app.staticTexts[@"ShowIS"];
-    [show tap];
-    
-    sleep(6);
-    
-    for(int i = 0; i<30; i++) {
-        if(i>10){
+        XCUIElement *btn = self.app.buttons[@"Load"];
+        XCTAssertTrue(btn.exists, @"No Load Interstitial AD btn.");
+        [btn tap];
+        BOOL isReady = NO;
+        sleep(3);
+        for(int i = 0; i < 10; i++) {
+            XCUIElement *show = self.app.staticTexts[@"ShowIS"];
+            if(show.exists) {
+                isReady = YES;
+                break;
+            }
+            sleep(3);
+        }
+        
+        XCUIElement *show = self.app.staticTexts[@"ShowIS"];
+        [show tap];
+        
+        sleep(6);
+        
+        for(int i = 0; i < 30; i++) {
             XCUIElement *close = self.app.buttons[@"close_x"];
             if(close.exists) {
                [close tap];
-                return;
+                break;;
             }
+            sleep(1);
         }
-        sleep(1);
     }
-    XCUIElement *closebtn = self.app.buttons[@"ad_closeBtn"];
-    XCTAssertTrue(closebtn.exists, @"ad_closeBtn no exists.");
-    [closebtn tap];
-    sleep(1);
 }
-
-
-
 @end

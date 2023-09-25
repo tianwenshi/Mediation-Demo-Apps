@@ -301,6 +301,7 @@
 
 - (void)interstitialDidOpen {
     NSLog(@"%s",__PRETTY_FUNCTION__);
+    [self.showISButton setEnabled:NO];
 }
 
 // The method will be called each time the Interstitial windows has opened successfully.
