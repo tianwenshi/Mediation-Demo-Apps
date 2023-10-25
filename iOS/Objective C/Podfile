@@ -6,6 +6,7 @@ target 'IronSourceDemoApp' do
   #use_frameworks!
 pod 'IronSourceSDK'
 pod 'zMaticoo'
+pod 'DataEyeSDK',:git => 'https://gitlab.yeahmobi.com/yeahmobile/ios-sdk.git'
   # Pods for IronSourceDemoApp
 
 end
