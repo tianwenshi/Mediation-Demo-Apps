@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		281A70ED2A6919E400C66952 /* MaticooMediationNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A70E72A6919E400C66952 /* MaticooMediationNetwork.m */; };
 		281A70EE2A6919E400C66952 /* MaticooMediationTrackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A70E82A6919E400C66952 /* MaticooMediationTrackManager.m */; };
-		281A70EF2A6919E400C66952 /* MaticooMediationURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A70EB2A6919E400C66952 /* MaticooMediationURLSession.m */; };
 		288896732A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 288896722A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m */; };
 		288896762A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 288896752A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m */; };
 		2888967C2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 2888967B2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m */; };
@@ -52,12 +50,8 @@
 
 /* Begin PBXFileReference section */
 		126ED039A58CD8FF06C4EA94 /* Pods-IronSourceDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IronSourceDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-IronSourceDemoApp/Pods-IronSourceDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		281A70E72A6919E400C66952 /* MaticooMediationNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaticooMediationNetwork.m; path = ISMaticooCustomAdapter/MaticooMediationNetwork.m; sourceTree = SOURCE_ROOT; };
 		281A70E82A6919E400C66952 /* MaticooMediationTrackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaticooMediationTrackManager.m; path = ISMaticooCustomAdapter/MaticooMediationTrackManager.m; sourceTree = SOURCE_ROOT; };
-		281A70E92A6919E400C66952 /* MaticooMediationURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaticooMediationURLSession.h; path = ISMaticooCustomAdapter/MaticooMediationURLSession.h; sourceTree = SOURCE_ROOT; };
 		281A70EA2A6919E400C66952 /* MaticooMediationTrackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaticooMediationTrackManager.h; path = ISMaticooCustomAdapter/MaticooMediationTrackManager.h; sourceTree = SOURCE_ROOT; };
-		281A70EB2A6919E400C66952 /* MaticooMediationURLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaticooMediationURLSession.m; path = ISMaticooCustomAdapter/MaticooMediationURLSession.m; sourceTree = SOURCE_ROOT; };
-		281A70EC2A6919E400C66952 /* MaticooMediationNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaticooMediationNetwork.h; path = ISMaticooCustomAdapter/MaticooMediationNetwork.h; sourceTree = SOURCE_ROOT; };
 		288896712A5F9E79008FEDF4 /* ISMaticooCustomAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISMaticooCustomAdapter.h; path = ISMaticooCustomAdapter/ISMaticooCustomAdapter.h; sourceTree = SOURCE_ROOT; };
 		288896722A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ISMaticooCustomAdapter.m; path = ISMaticooCustomAdapter/ISMaticooCustomAdapter.m; sourceTree = SOURCE_ROOT; };
 		288896742A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISMaticooCustomRewardedVideo.h; path = ISMaticooCustomAdapter/ISMaticooCustomRewardedVideo.h; sourceTree = SOURCE_ROOT; };
@@ -158,12 +152,8 @@
 				2888967B2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m */,
 				288896742A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.h */,
 				288896752A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m */,
-				281A70EC2A6919E400C66952 /* MaticooMediationNetwork.h */,
-				281A70E72A6919E400C66952 /* MaticooMediationNetwork.m */,
 				281A70EA2A6919E400C66952 /* MaticooMediationTrackManager.h */,
 				281A70E82A6919E400C66952 /* MaticooMediationTrackManager.m */,
-				281A70E92A6919E400C66952 /* MaticooMediationURLSession.h */,
-				281A70EB2A6919E400C66952 /* MaticooMediationURLSession.m */,
 			);
 			path = IronSourceDemoApp;
 			sourceTree = "<group>";
@@ -374,10 +364,8 @@
 				2888967C2A5F9ED5008FEDF4 /* ISMaticooCustomInterstitial.m in Sources */,
 				72E0D6601E2675C7009ABC1B /* main.m in Sources */,
 				288896762A5F9E96008FEDF4 /* ISMaticooCustomRewardedVideo.m in Sources */,
-				281A70ED2A6919E400C66952 /* MaticooMediationNetwork.m in Sources */,
 				281A70EE2A6919E400C66952 /* MaticooMediationTrackManager.m in Sources */,
 				72E0D6551E267513009ABC1B /* AppDelegate.m in Sources */,
-				281A70EF2A6919E400C66952 /* MaticooMediationURLSession.m in Sources */,
 				288896732A5F9E79008FEDF4 /* ISMaticooCustomAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,10 +567,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/IronSourceDemoApp/Info.plist";
-
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) /usr/lib/swift @executable_path/Frameworks";
-
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -606,10 +592,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/IronSourceDemoApp/Info.plist";
-
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) /usr/lib/swift @executable_path/Frameworks";
-
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
